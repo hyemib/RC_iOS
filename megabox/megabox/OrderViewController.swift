@@ -16,6 +16,5 @@ class OrderViewController: UIViewController {
         simpleOrder.layer.cornerRadius = 10
         drinkView.layer.cornerRadius = 30
         orderView.layer.cornerRadius = 30
-
     }
 }
