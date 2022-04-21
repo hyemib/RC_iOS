@@ -10,7 +10,9 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    //1. UIVisualEffectView 생성
+    var blurView: UIVisualEffectView?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -29,11 +31,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        // 3. 앱이 다시 활성화 상태가 되면 blurView를 superview (window)에 제거
+        if let blurView = blurView {
+            blurView.removeFromSuperview()
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
+        // 2. will resign active 상태가 호출되면 blurView를 window 크기로 잡아주고 window에 추가
+        guard let window = window else {
+            return
+        }
+        let effect = UIBlurEffect(style: .regular)
+        blurView = UIVisualEffectView(effect: effect)
+        blurView?.frame = window.frame
+        window.addSubview(blurView!)
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

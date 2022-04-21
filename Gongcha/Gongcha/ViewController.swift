@@ -10,11 +10,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar()
-        pageControl()
+        setNavigationBar()
+        setPageControl()
     }
     
-    func navigationBar() {
+    func setNavigationBar() {
         let logo = UIImageView(image: UIImage(named: "logo"))
         logo.contentMode = .scaleAspectFit
         logo.widthAnchor.constraint(equalToConstant: 140).isActive = true
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         navigationItem.titleView = logo
     }
     
-    func pageControl() {
+    func setPageControl() {
         adPageControl.numberOfPages = adImages.count
         adPageControl.currentPage = 0
         adImage.image = UIImage(named: adImages[0])
