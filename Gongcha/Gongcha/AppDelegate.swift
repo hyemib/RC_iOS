@@ -1,16 +1,11 @@
-//
-//  AppDelegate.swift
-//  Gongcha
-//
-//  Created by hyemi on 2022/04/19.
-//
 
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var cart = Cart(cartTitle: "", cartPrice: "", cartCount: 0)
+    var cartList = [Cart]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

@@ -30,17 +30,36 @@ class MenuViewController: UIViewController {
     let drink = Drink.shared
     var pressButton = 0
     
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    // 뷰가 메모리에 적재된 시점
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setNavigationBar()
         pressMenuButton(1)
+        
+    }
+    
+    // 뷰 컨트롤러가 화면에 나타나기 바로 직전
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(enterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     func setNavigationBar() {
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = ""
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButtonItem
+    }
+    
+    @objc func enterForeground() {
+        if (appDelegate?.cartList.count)! > 0 {
+            let alertVC = UIAlertController(title: "장바구니에 상품이 있습니다.", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alertVC.addAction(okAction)
+            present(alertVC, animated: true, completion: nil)
+            NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        }
     }
     
     func pressMenuButton(_ buttonNum: Int) {
@@ -78,6 +97,36 @@ class MenuViewController: UIViewController {
     
     @IBAction func pressMenuButton5(_ sender: UIButton) {
         pressMenuButton(5)
+    }
+    
+    func pressDrinkButton(_ buttonNum: Int) {
+        guard let detailVC = self.storyboard?.instantiateViewController(identifier: "detailVC") as? MenuDetailViewController else { return }
+        
+        detailVC.title1 = drink.drinkTitle[pressButton][buttonNum-1]
+        detailVC.price = drink.drinkPrice[pressButton][buttonNum-1]
+        detailVC.image = UIImage(named: drink.drinkImage[pressButton][buttonNum-1])
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    @IBAction func pressDrinkButton1(_ sender: UIButton) {
+        pressDrinkButton(1)
+    }
+    
+    @IBAction func pressDrinkButton2(_ sender: UIButton) {
+        pressDrinkButton(2)
+    }
+    
+    @IBAction func pressDrinkButton3(_ sender: UIButton) {
+        pressDrinkButton(3)
+    }
+    
+    @IBAction func pressDrinkButton4(_ sender: UIButton) {
+        pressDrinkButton(4)
+    }
+    
+    @IBAction func pressDrinkButton5(_ sender: UIButton) {
+        pressDrinkButton(5)
     }
     
 }

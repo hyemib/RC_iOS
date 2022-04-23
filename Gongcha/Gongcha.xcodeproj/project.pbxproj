@@ -14,9 +14,12 @@
 		921FF889280DC2F8009396C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921FF888280DC2F8009396C5 /* Assets.xcassets */; };
 		921FF88C280DC2F8009396C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921FF88A280DC2F8009396C5 /* LaunchScreen.storyboard */; };
 		921FF894280FEBD6009396C5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF893280FEBD6009396C5 /* MenuViewController.swift */; };
-		921FF8A02811773D009396C5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF89F2811773D009396C5 /* PopupViewController.swift */; };
 		921FF8A22811845E009396C5 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8A12811845E009396C5 /* Drink.swift */; };
 		921FF8A42811B9D8009396C5 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8A32811B9D8009396C5 /* MenuDetailViewController.swift */; };
+		921FF8A62811EA75009396C5 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8A52811EA75009396C5 /* CartViewController.swift */; };
+		921FF8A82811ED37009396C5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8A72811ED37009396C5 /* Cart.swift */; };
+		921FF8AE2812574A009396C5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8AD2812574A009396C5 /* PopupViewController.swift */; };
+		921FF8B22812C4DD009396C5 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921FF8B12812C4DD009396C5 /* OrderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +32,12 @@
 		921FF88B280DC2F8009396C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		921FF88D280DC2F8009396C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		921FF893280FEBD6009396C5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		921FF89F2811773D009396C5 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		921FF8A12811845E009396C5 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		921FF8A32811B9D8009396C5 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		921FF8A52811EA75009396C5 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		921FF8A72811ED37009396C5 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		921FF8AD2812574A009396C5 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		921FF8B12812C4DD009396C5 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +70,17 @@
 		921FF87E280DC2F7009396C5 /* Gongcha */ = {
 			isa = PBXGroup;
 			children = (
+				921FF8B12812C4DD009396C5 /* OrderViewController.swift */,
+				921FF8A52811EA75009396C5 /* CartViewController.swift */,
 				921FF8A32811B9D8009396C5 /* MenuDetailViewController.swift */,
-				921FF89F2811773D009396C5 /* PopupViewController.swift */,
+				921FF8A72811ED37009396C5 /* Cart.swift */,
 				921FF893280FEBD6009396C5 /* MenuViewController.swift */,
 				921FF8A12811845E009396C5 /* Drink.swift */,
 				921FF87F280DC2F7009396C5 /* AppDelegate.swift */,
 				921FF881280DC2F7009396C5 /* SceneDelegate.swift */,
 				921FF883280DC2F7009396C5 /* ViewController.swift */,
 				921FF885280DC2F7009396C5 /* Main.storyboard */,
+				921FF8AD2812574A009396C5 /* PopupViewController.swift */,
 				921FF888280DC2F8009396C5 /* Assets.xcassets */,
 				921FF88A280DC2F8009396C5 /* LaunchScreen.storyboard */,
 				921FF88D280DC2F8009396C5 /* Info.plist */,
@@ -150,13 +159,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				921FF8A02811773D009396C5 /* PopupViewController.swift in Sources */,
+				921FF8A82811ED37009396C5 /* Cart.swift in Sources */,
+				921FF8B22812C4DD009396C5 /* OrderViewController.swift in Sources */,
 				921FF884280DC2F7009396C5 /* ViewController.swift in Sources */,
 				921FF8A22811845E009396C5 /* Drink.swift in Sources */,
 				921FF880280DC2F7009396C5 /* AppDelegate.swift in Sources */,
 				921FF882280DC2F7009396C5 /* SceneDelegate.swift in Sources */,
+				921FF8AE2812574A009396C5 /* PopupViewController.swift in Sources */,
 				921FF8A42811B9D8009396C5 /* MenuDetailViewController.swift in Sources */,
 				921FF894280FEBD6009396C5 /* MenuViewController.swift in Sources */,
+				921FF8A62811EA75009396C5 /* CartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
