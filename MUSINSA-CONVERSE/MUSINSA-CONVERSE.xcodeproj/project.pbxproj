@@ -18,9 +18,29 @@
 		9233C0632819D73B0062E106 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C0612819D73B0062E106 /* BannerCell.xib */; };
 		9233C0662819EB700062E106 /* BannerCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C0642819EB700062E106 /* BannerCell2.swift */; };
 		9233C0672819EB700062E106 /* BannerCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C0652819EB700062E106 /* BannerCell2.xib */; };
+		9233C073281A4A900062E106 /* FirstTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C072281A4A900062E106 /* FirstTabBarController.swift */; };
+		9233C075281A4A9D0062E106 /* SecondTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C074281A4A9D0062E106 /* SecondTabBarController.swift */; };
+		9233C077281A512A0062E106 /* TabManBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C076281A512A0062E106 /* TabManBarViewController.swift */; };
+		9233C083281A613D0062E106 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C081281A613D0062E106 /* MenuCell.swift */; };
+		9233C084281A613D0062E106 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C082281A613D0062E106 /* MenuCell.xib */; };
+		9233C087281A643B0062E106 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C085281A643B0062E106 /* CategoryCell.swift */; };
+		9233C088281A643B0062E106 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C086281A643B0062E106 /* CategoryCell.xib */; };
+		9233C08D281A68590062E106 /* CategoryCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C08B281A68590062E106 /* CategoryCell2.swift */; };
+		9233C08E281A68590062E106 /* CategoryCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C08C281A68590062E106 /* CategoryCell2.xib */; };
+		9233C091281A7DCB0062E106 /* RankingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C08F281A7DCB0062E106 /* RankingCell.swift */; };
+		9233C092281A7DCB0062E106 /* RankingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C090281A7DCB0062E106 /* RankingCell.xib */; };
+		9233C095281A81160062E106 /* RankingCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C093281A81160062E106 /* RankingCell2.swift */; };
+		9233C096281A81160062E106 /* RankingCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C094281A81160062E106 /* RankingCell2.xib */; };
+		9233C098281AB71F0062E106 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C097281AB71F0062E106 /* Data.swift */; };
+		9233C09B281ADA5C0062E106 /* ProductCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C099281ADA5C0062E106 /* ProductCell2.swift */; };
+		9233C09C281ADA5C0062E106 /* ProductCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C09A281ADA5C0062E106 /* ProductCell2.xib */; };
+		9233C09F281ADDEB0062E106 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233C09D281ADDEB0062E106 /* ProductCell.swift */; };
+		9233C0A0281ADDEB0062E106 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9233C09E281ADDEB0062E106 /* ProductCell.xib */; };
+		C778E425E11368E1E072066B /* Pods_MUSINSA_CONVERSE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10F6CB0F6D7CDCEF64F8772 /* Pods_MUSINSA_CONVERSE.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EFCF2E84AD4B515292F9324 /* Pods-MUSINSA-CONVERSE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSINSA-CONVERSE.debug.xcconfig"; path = "Target Support Files/Pods-MUSINSA-CONVERSE/Pods-MUSINSA-CONVERSE.debug.xcconfig"; sourceTree = "<group>"; };
 		9233C0452819B8060062E106 /* MUSINSA-CONVERSE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MUSINSA-CONVERSE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9233C0482819B8060062E106 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9233C04A2819B8060062E106 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +54,26 @@
 		9233C0612819D73B0062E106 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
 		9233C0642819EB700062E106 /* BannerCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell2.swift; sourceTree = "<group>"; };
 		9233C0652819EB700062E106 /* BannerCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell2.xib; sourceTree = "<group>"; };
+		9233C072281A4A900062E106 /* FirstTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabBarController.swift; sourceTree = "<group>"; };
+		9233C074281A4A9D0062E106 /* SecondTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabBarController.swift; sourceTree = "<group>"; };
+		9233C076281A512A0062E106 /* TabManBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManBarViewController.swift; sourceTree = "<group>"; };
+		9233C081281A613D0062E106 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		9233C082281A613D0062E106 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		9233C085281A643B0062E106 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		9233C086281A643B0062E106 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		9233C08B281A68590062E106 /* CategoryCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell2.swift; sourceTree = "<group>"; };
+		9233C08C281A68590062E106 /* CategoryCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell2.xib; sourceTree = "<group>"; };
+		9233C08F281A7DCB0062E106 /* RankingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell.swift; sourceTree = "<group>"; };
+		9233C090281A7DCB0062E106 /* RankingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingCell.xib; sourceTree = "<group>"; };
+		9233C093281A81160062E106 /* RankingCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCell2.swift; sourceTree = "<group>"; };
+		9233C094281A81160062E106 /* RankingCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingCell2.xib; sourceTree = "<group>"; };
+		9233C097281AB71F0062E106 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9233C099281ADA5C0062E106 /* ProductCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell2.swift; sourceTree = "<group>"; };
+		9233C09A281ADA5C0062E106 /* ProductCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell2.xib; sourceTree = "<group>"; };
+		9233C09D281ADDEB0062E106 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		9233C09E281ADDEB0062E106 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		C10F6CB0F6D7CDCEF64F8772 /* Pods_MUSINSA_CONVERSE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSINSA_CONVERSE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED23830CA5290147BFED6F1A /* Pods-MUSINSA-CONVERSE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSINSA-CONVERSE.release.xcconfig"; path = "Target Support Files/Pods-MUSINSA-CONVERSE/Pods-MUSINSA-CONVERSE.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +81,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C778E425E11368E1E072066B /* Pods_MUSINSA_CONVERSE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422D94EC3EE9FC4B7E2FCE1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C10F6CB0F6D7CDCEF64F8772 /* Pods_MUSINSA_CONVERSE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50BFF978F084FC0FD1721BA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EFCF2E84AD4B515292F9324 /* Pods-MUSINSA-CONVERSE.debug.xcconfig */,
+				ED23830CA5290147BFED6F1A /* Pods-MUSINSA-CONVERSE.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9233C03C2819B8060062E106 = {
 			isa = PBXGroup;
 			children = (
 				9233C0472819B8060062E106 /* MUSINSA-CONVERSE */,
 				9233C0462819B8060062E106 /* Products */,
+				50BFF978F084FC0FD1721BA6 /* Pods */,
+				422D94EC3EE9FC4B7E2FCE1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,12 +129,30 @@
 				9233C0482819B8060062E106 /* AppDelegate.swift */,
 				9233C04A2819B8060062E106 /* SceneDelegate.swift */,
 				9233C05C2819C3270062E106 /* TabBarController.swift */,
-				9233C05E2819C4A10062E106 /* HomeViewController.swift */,
+				9233C094281A81160062E106 /* RankingCell2.xib */,
+				9233C08B281A68590062E106 /* CategoryCell2.swift */,
+				9233C08C281A68590062E106 /* CategoryCell2.xib */,
+				9233C093281A81160062E106 /* RankingCell2.swift */,
+				9233C08F281A7DCB0062E106 /* RankingCell.swift */,
+				9233C097281AB71F0062E106 /* Data.swift */,
+				9233C090281A7DCB0062E106 /* RankingCell.xib */,
+				9233C086281A643B0062E106 /* CategoryCell.xib */,
+				9233C085281A643B0062E106 /* CategoryCell.swift */,
 				9233C04E2819B8060062E106 /* Main.storyboard */,
-				9233C0602819D73B0062E106 /* BannerCell.swift */,
-				9233C0642819EB700062E106 /* BannerCell2.swift */,
-				9233C0652819EB700062E106 /* BannerCell2.xib */,
+				9233C05E2819C4A10062E106 /* HomeViewController.swift */,
+				9233C099281ADA5C0062E106 /* ProductCell2.swift */,
+				9233C09A281ADA5C0062E106 /* ProductCell2.xib */,
 				9233C0612819D73B0062E106 /* BannerCell.xib */,
+				9233C0602819D73B0062E106 /* BannerCell.swift */,
+				9233C0652819EB700062E106 /* BannerCell2.xib */,
+				9233C0642819EB700062E106 /* BannerCell2.swift */,
+				9233C09D281ADDEB0062E106 /* ProductCell.swift */,
+				9233C09E281ADDEB0062E106 /* ProductCell.xib */,
+				9233C082281A613D0062E106 /* MenuCell.xib */,
+				9233C081281A613D0062E106 /* MenuCell.swift */,
+				9233C076281A512A0062E106 /* TabManBarViewController.swift */,
+				9233C072281A4A900062E106 /* FirstTabBarController.swift */,
+				9233C074281A4A9D0062E106 /* SecondTabBarController.swift */,
 				9233C0512819B8070062E106 /* Assets.xcassets */,
 				9233C0532819B8070062E106 /* LaunchScreen.storyboard */,
 				9233C0562819B8070062E106 /* Info.plist */,
@@ -89,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9233C0592819B8070062E106 /* Build configuration list for PBXNativeTarget "MUSINSA-CONVERSE" */;
 			buildPhases = (
+				2EFFC3CCE8C20A46AB0CC16A /* [CP] Check Pods Manifest.lock */,
 				9233C0412819B8060062E106 /* Sources */,
 				9233C0422819B8060062E106 /* Frameworks */,
 				9233C0432819B8060062E106 /* Resources */,
+				466F7A431006B5EBDB642EF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,9 +220,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9233C084281A613D0062E106 /* MenuCell.xib in Resources */,
+				9233C088281A643B0062E106 /* CategoryCell.xib in Resources */,
+				9233C08E281A68590062E106 /* CategoryCell2.xib in Resources */,
+				9233C096281A81160062E106 /* RankingCell2.xib in Resources */,
 				9233C0552819B8070062E106 /* LaunchScreen.storyboard in Resources */,
 				9233C0632819D73B0062E106 /* BannerCell.xib in Resources */,
+				9233C09C281ADA5C0062E106 /* ProductCell2.xib in Resources */,
 				9233C0672819EB700062E106 /* BannerCell2.xib in Resources */,
+				9233C092281A7DCB0062E106 /* RankingCell.xib in Resources */,
+				9233C0A0281ADDEB0062E106 /* ProductCell.xib in Resources */,
 				9233C0522819B8070062E106 /* Assets.xcassets in Resources */,
 				9233C0502819B8060062E106 /* Main.storyboard in Resources */,
 			);
@@ -150,17 +237,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EFFC3CCE8C20A46AB0CC16A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSINSA-CONVERSE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		466F7A431006B5EBDB642EF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MUSINSA-CONVERSE/Pods-MUSINSA-CONVERSE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MUSINSA-CONVERSE/Pods-MUSINSA-CONVERSE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MUSINSA-CONVERSE/Pods-MUSINSA-CONVERSE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9233C0412819B8060062E106 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9233C098281AB71F0062E106 /* Data.swift in Sources */,
 				9233C0662819EB700062E106 /* BannerCell2.swift in Sources */,
 				9233C0622819D73B0062E106 /* BannerCell.swift in Sources */,
+				9233C091281A7DCB0062E106 /* RankingCell.swift in Sources */,
+				9233C08D281A68590062E106 /* CategoryCell2.swift in Sources */,
+				9233C077281A512A0062E106 /* TabManBarViewController.swift in Sources */,
+				9233C075281A4A9D0062E106 /* SecondTabBarController.swift in Sources */,
 				9233C05D2819C3270062E106 /* TabBarController.swift in Sources */,
 				9233C0492819B8060062E106 /* AppDelegate.swift in Sources */,
+				9233C083281A613D0062E106 /* MenuCell.swift in Sources */,
+				9233C095281A81160062E106 /* RankingCell2.swift in Sources */,
 				9233C04B2819B8060062E106 /* SceneDelegate.swift in Sources */,
+				9233C09F281ADDEB0062E106 /* ProductCell.swift in Sources */,
+				9233C073281A4A900062E106 /* FirstTabBarController.swift in Sources */,
+				9233C09B281ADA5C0062E106 /* ProductCell2.swift in Sources */,
 				9233C05F2819C4A10062E106 /* HomeViewController.swift in Sources */,
+				9233C087281A643B0062E106 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +444,7 @@
 		};
 		9233C05A2819B8070062E106 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EFCF2E84AD4B515292F9324 /* Pods-MUSINSA-CONVERSE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -331,6 +472,7 @@
 		};
 		9233C05B2819B8070062E106 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED23830CA5290147BFED6F1A /* Pods-MUSINSA-CONVERSE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

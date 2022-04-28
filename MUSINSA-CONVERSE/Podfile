@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MUSINSA-CONVERSE' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MUSINSA-CONVERSE 
+  pod 'Tabman', '~> 2.9'
+
+end

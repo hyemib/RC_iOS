@@ -2,11 +2,10 @@
 import UIKit
 
 class BannerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    var bannerImgs = ["bannerImg1", "bannerImg2", "bannerImg3", "bannerImg4", "bannerImg5", "bannerImg6"]
-    var bannerTitles = ["페인트 스플래터", "에너지 바이브", "아카이브 프린트", "블랙핀스트라이프", "리뉴", "척 70뮬"]
     
     @IBOutlet weak var collectionView: UICollectionView!
+
+    var data = Data.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,18 +16,16 @@ class BannerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDat
         collectionView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
         
         collectionView.register(UINib(nibName: "BannerCell2", bundle: nil), forCellWithReuseIdentifier: "BannerCell2")
-
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerImgs.count
+        return data.HomeData[0].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BannerCell2", for: indexPath) as! BannerCell2
-        let img = UIImage(named: bannerImgs[indexPath.item])
-        let txt = bannerTitles[indexPath.item]
+        let img = UIImage(named: data.HomeData[0][indexPath.item].imageName)
+        let txt = data.HomeData[0][indexPath.item].title
         cell.image.contentMode = .scaleAspectFill
         cell.image.image = img
         cell.title.text = txt
@@ -43,8 +40,6 @@ class BannerCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDat
         return 5
         
     }
-    
-    
 }
 
 
