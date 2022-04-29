@@ -31,7 +31,7 @@ class Data: NSObject {
             HomeModel(imageName: "productImg2", title: "척 70 클래식 블랙 162058C", price: "95,000원", star: "34,586", heart: "9,999+"),
             HomeModel(imageName: "productImg3", title: "척 70 클래식 블랙 162050C", price: "99,000원", star: "27,123", heart: "9,999+"),
             HomeModel(imageName: "productImg4", title: "척테일러 올스타 블랙 하이 M9160C", price: "59,000원", star: "16,340", heart: "9,999+"),
-            HomeModel(imageName: "productImg5", title: "척테일러 올스타 화이트 옥스 M7652C", price: "55,000원", star: "6,2999", heart: "9,999+"),
+            HomeModel(imageName: "productImg5", title: "척테일러 올스타 화이트 옥스 M7652C", price: "55,000원", star: "6,299", heart: "9,999+"),
             HomeModel(imageName: "productImg6", title: "척 70 클래식 파치먼트 162062C", price: "95,000원", star: "10,369", heart: "9,999+"),
             HomeModel(imageName: "productImg7", title: "척테일러 올스타 캔버스 리프트 화이트 560251C", price: "75,000원", star: "3,545", heart: "9,999+"),
             HomeModel(imageName: "productImg8", title: "런스타 하이크 블랙 166800C", price: "109,000원", star: "6,158", heart: "9,999+"),

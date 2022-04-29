@@ -8,6 +8,7 @@ class TabBarController: UITabBarController {
         
         setTabBar()
         
+        self.selectedIndex = 2
     }
     func setTabBar() {
         tabBar.barTintColor = .black

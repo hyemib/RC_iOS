@@ -32,6 +32,18 @@ class ProductViewController: UIViewController {
 
     
     @objc func moveCart() {
+        guard let CartVC = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
+        CartVC.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.pushViewController(CartVC, animated: true)
         
     }
+    
+    @IBAction func pressPurchase(_ sender: UIButton) {
+        guard let PurchseVC = storyboard?.instantiateViewController(withIdentifier: "PurchaseViewController") as? PurchaseViewController else { return }
+        PurchseVC.price = price
+        PurchseVC.modalPresentationStyle = .overCurrentContext
+        self.present(PurchseVC, animated: false, completion: nil)
+        
+    }
+    
 }
