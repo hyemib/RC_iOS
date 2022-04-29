@@ -62,12 +62,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
             return cell
-        } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RankingCell", for: indexPath)
-            return cell
+        } else if indexPath.row == 4 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductCell {
+                cell.cellDelegate = self
+                return cell
+            }
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RankingCell", for: indexPath)
         return cell
+       
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,6 +84,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 3
     }
     
+}
+
+extension HomeViewController: CollectionViewDelegate {
+    func collectionView(collectionviewcell: ProductCell2?, index: Int, didTrappedInTableViewCell: ProductCell) {
+        guard let productVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController else { return }
+        productVC.title1 = data.HomeData[3][index].title ?? ""
+        productVC.image = UIImage(named: data.HomeData[3][index].imageName)
+        productVC.price = data.HomeData[3][index].price ?? ""
+        productVC.star = "\(data.HomeData[3][index].star ?? "0")개"
+        self.navigationController?.pushViewController(productVC, animated: true)
+    }
 }
 
 

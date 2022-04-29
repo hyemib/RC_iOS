@@ -1,20 +1,33 @@
 
 import UIKit
 
-class ProductCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol CollectionViewDelegate: AnyObject {
+    func collectionView(collectionviewcell: ProductCell2?, index: Int, didTrappedInTableViewCell: ProductCell)
+}
 
+
+class ProductCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     @IBOutlet weak var collectionView: UICollectionView!
 
+    weak var cellDelegate: CollectionViewDelegate?
+    
     var data = Data.shared
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
+        setCall()
         
+        
+        
+    }
+    
+    func setCall() {
         collectionView.register(UINib(nibName: "ProductCell2", bundle: nil), forCellWithReuseIdentifier: "ProductCell2")
         
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,4 +60,11 @@ class ProductCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? ProductCell2
+        self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTrappedInTableViewCell: self)
+    }
 }
+
+
+

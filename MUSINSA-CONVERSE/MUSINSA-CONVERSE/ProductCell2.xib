@@ -104,11 +104,6 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePc-Y4-cs8">
-                        <rect key="frame" x="0.0" y="0.0" width="172" height="184.5"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cX-4G-fMy">
                         <rect key="frame" x="142" y="261" width="28" height="15"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
@@ -123,7 +118,6 @@
                 <constraint firstItem="6KT-s2-aFl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="5Bl-2H-Wd9"/>
                 <constraint firstAttribute="bottom" secondItem="bp1-9m-BAj" secondAttribute="bottom" constant="5" id="71g-kA-Zrf"/>
                 <constraint firstAttribute="trailing" secondItem="Ea8-D5-HcW" secondAttribute="trailing" id="9qN-8F-w3n"/>
-                <constraint firstItem="W6e-Jo-ye4" firstAttribute="top" secondItem="ePc-Y4-cs8" secondAttribute="bottom" id="Fpu-R6-iJQ"/>
                 <constraint firstAttribute="bottom" secondItem="Ea8-D5-HcW" secondAttribute="bottom" constant="150" id="Qj4-ht-Hes"/>
                 <constraint firstItem="bp1-9m-BAj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="QqS-by-lqh"/>
                 <constraint firstItem="Ea8-D5-HcW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="R5k-sw-aEx"/>
@@ -132,14 +126,11 @@
                 <constraint firstItem="YWi-8M-YWq" firstAttribute="centerY" secondItem="bp1-9m-BAj" secondAttribute="centerY" id="T25-7a-hPp"/>
                 <constraint firstItem="3cX-4G-fMy" firstAttribute="centerY" secondItem="AWF-xX-Dg0" secondAttribute="centerY" id="V7Y-FM-Hzx"/>
                 <constraint firstItem="Ea8-D5-HcW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="aeV-gt-PXu"/>
-                <constraint firstItem="ePc-Y4-cs8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="atZ-72-Yx5"/>
-                <constraint firstAttribute="trailing" secondItem="ePc-Y4-cs8" secondAttribute="trailing" id="c0V-tg-g7h"/>
                 <constraint firstItem="W6e-Jo-ye4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="fBm-SV-91f"/>
                 <constraint firstItem="bp1-9m-BAj" firstAttribute="top" secondItem="S3F-SI-nFy" secondAttribute="bottom" constant="10" id="fqy-9b-M2G"/>
                 <constraint firstItem="W6e-Jo-ye4" firstAttribute="top" secondItem="6KT-s2-aFl" secondAttribute="bottom" constant="5" id="h4l-wQ-Qae"/>
                 <constraint firstItem="YWi-8M-YWq" firstAttribute="bottom" secondItem="3cX-4G-fMy" secondAttribute="bottom" id="hCz-yL-P6S"/>
                 <constraint firstItem="S3F-SI-nFy" firstAttribute="top" secondItem="W6e-Jo-ye4" secondAttribute="bottom" constant="10" id="og7-p4-EmS"/>
-                <constraint firstItem="ePc-Y4-cs8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="q5w-Ji-N2u"/>
                 <constraint firstItem="3cX-4G-fMy" firstAttribute="leading" secondItem="YWi-8M-YWq" secondAttribute="trailing" constant="2" id="qBj-Ww-zNb"/>
                 <constraint firstItem="S3F-SI-nFy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="sRK-KZ-nNc"/>
             </constraints>

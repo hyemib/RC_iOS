@@ -1,6 +1,8 @@
 
 import UIKit
 
+
+
 class ProductCell2: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
