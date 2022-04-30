@@ -1,6 +1,16 @@
-# week1
+# week1 
 
-### 실제 애플리케이션 프론트 구성
+> 진행기간: 2022.04.09 ~ 2022.04.15
+
+</br>
+
+## 🎯주제
+
+- AutoLayout을 적용하여 UI 구성
+
+</br>
+
+## 🎯실행화면
 
 - 메가박스 UI
 
@@ -8,11 +18,17 @@
 
 </br>
 
-✔️ 사용한 컴포넌트
+## 🎯사용한 컴포넌트
 
-```markdown
-UILabel, UIButton, UIView, UIImageView, UIStackView, UIScrollView, UITabBarController, UINavigationController
-```
+- `UILabel`, ` UIButton`
+- `UIView`, `UIImageView`, `UIStackView`, `UIScrollView`
+- `UITabBarController`, `UINavigationController`
+
+</br>
+
+## 🎯 TIL
+
+[바로가기](https://github.com/Hhyemm/RC_iOS/blob/main/TIL/1주차(22.04.09%7E22.04.15).md)
 
 </br>
 
