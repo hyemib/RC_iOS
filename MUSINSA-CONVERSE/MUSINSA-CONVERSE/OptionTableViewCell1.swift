@@ -7,8 +7,4 @@ class OptionTableViewCell1: UITableViewCell {
         super.awakeFromNib()
         
     }
-
-   
-    
-    
 }

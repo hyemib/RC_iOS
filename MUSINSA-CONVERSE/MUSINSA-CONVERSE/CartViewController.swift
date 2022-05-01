@@ -75,6 +75,4 @@ extension CartViewController: PageboyViewControllerDataSource, TMBarDataSource {
         return nil
         
     }
-    
-    
 }

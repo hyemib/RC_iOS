@@ -9,7 +9,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productPrice: UILabel!
     
     var image: UIImage?
-    var title1: String = ""
+    var title1 = ""
     var price = ""
     var star = ""
     
@@ -27,7 +27,7 @@ class ProductViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButtonItem
         let navigationBarItem = UIBarButtonItem(image: UIImage(named: "bag2"), style: .plain, target: self, action: #selector(moveCart))
         navigationBarItem.tintColor = .black
-                self.navigationItem.rightBarButtonItem = navigationBarItem
+        self.navigationItem.rightBarButtonItem = navigationBarItem
     }
 
     
@@ -40,7 +40,9 @@ class ProductViewController: UIViewController {
     
     @IBAction func pressPurchase(_ sender: UIButton) {
         guard let PurchseVC = storyboard?.instantiateViewController(withIdentifier: "PurchaseViewController") as? PurchaseViewController else { return }
-        PurchseVC.price = price
+        PurchseVC.productImage1 = image
+        PurchseVC.productTitle1 = title1
+        PurchseVC.productPrice1 = price
         PurchseVC.modalPresentationStyle = .overCurrentContext
         self.present(PurchseVC, animated: false, completion: nil)
         

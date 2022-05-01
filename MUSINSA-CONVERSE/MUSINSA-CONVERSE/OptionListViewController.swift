@@ -58,6 +58,5 @@ extension OptionListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         self.delegate?.send(name: "\(sizeArr[indexPath.row-1])")
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-       
     }
 }
