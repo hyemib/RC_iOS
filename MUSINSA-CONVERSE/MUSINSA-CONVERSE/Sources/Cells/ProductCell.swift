@@ -3,7 +3,7 @@ import UIKit
 
 
 
-class ProductCell2: UICollectionViewCell {
+class ProductCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!

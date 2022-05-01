@@ -38,11 +38,8 @@ class Data: NSObject {
             HomeModel(imageName: "productImg9", title: "척 70 클래식 파치먼트 162053C", price: "109,000원", star: "6,056", heart: "9,999+"),
             HomeModel(imageName: "productImg10", title: "척 70 빈티지 캔버스 하이트 162065C", price: "99,000원", star: "4,038", heart: "9,999+"),
             HomeModel(imageName: "productImg11", title: "척테일러 올스타 화이트 하이 M7650C", price: "95,000원", star: "2,166", heart: "9,630"),
-            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", star: "1,522", heart: "8,672"),
-            HomeModel(imageName: "productImg13", title: "척테일러 올스타 클래식 레이드 M9696C", price: "79,000원", star: "1,312", heart: "9,581"),
-            HomeModel(imageName: "productImg14", title: "척 70 빈티지 캔버스 썬플라워 162063C", price: "55,000원", star: "3,003", heart: "9,879"),
-            HomeModel(imageName: "productImg15", title: "척 70 빈티지 캔버스 하이트 162056C", price: "75,000원", star: "2,912", heart: "9,806"),
-            HomeModel(imageName: "productImg16", title: "척테일러 올스타 클래식 네이비 M9697C", price: "55,000원", star: "1,189", heart: "9,662")
+            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", star: "1,522", heart: "8,672")
+           
         ]]
         
     }
