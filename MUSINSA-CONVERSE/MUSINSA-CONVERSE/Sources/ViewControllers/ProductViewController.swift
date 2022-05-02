@@ -21,6 +21,11 @@ class ProductViewController: UIViewController {
         productPrice.text = price
         productStar.text = star
         
+        setNavigationBar()
+    }
+    
+    func setNavigationBar() {
+        self.navigationController?.navigationBar.backgroundColor = .clear
         let backButtonItem = UIBarButtonItem()
         backButtonItem.tintColor = .black
         backButtonItem.title = ""

@@ -26,14 +26,10 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         
         productCollectionView.delegate = self
         productCollectionView.dataSource = self
-        
-        bannerCollectionView.register(UINib(nibName: "BannerCell", bundle: nil), forCellWithReuseIdentifier: "BannerCell")
-        rankingCollectionView.register(UINib(nibName: "RankingCell", bundle: nil), forCellWithReuseIdentifier: "RankingCell")
-        productCollectionView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
-        
+
         bannerCollectionView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0)
         
-        
+        registerCell()
         setNavigationBar()
         settingTabBar()
     }
@@ -48,10 +44,14 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         
         let rightButton = UIBarButtonItem(image: UIImage(named: "bag2"), style: .plain, target: self, action: #selector(moveCart))
         self.navigationItem.rightBarButtonItem = rightButton
-        
-        //navigationController?.navigationBar.isTranslucent = true
-        
     }
+    
+    func registerCell() {
+        bannerCollectionView.register(UINib(nibName: "BannerCell", bundle: nil), forCellWithReuseIdentifier: "BannerCell")
+        rankingCollectionView.register(UINib(nibName: "RankingCell", bundle: nil), forCellWithReuseIdentifier: "RankingCell")
+        productCollectionView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
+    }
+    
     
     @objc func moveCart() {
         guard let CartVC = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
@@ -109,7 +109,7 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         } else if collectionView == rankingCollectionView {
             return CGSize(width: (rankingCollectionView.frame.width) / 2.7, height: rankingCollectionView.frame.height)
         }
-        return CGSize(width: productCollectionView.frame.width / 2, height: 300)
+        return CGSize(width: productCollectionView.frame.width / 2, height: productCollectionView.frame.width )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -117,6 +117,16 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
             return 0
         }
         return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductViewController") as? ProductViewController else { return }
+        productVC.title1 = data.HomeData[3][indexPath.item].title ?? ""
+        productVC.price = data.HomeData[3][indexPath.item].price ?? ""
+        productVC.image = UIImage(named: data.HomeData[3][indexPath.item].imageName)
+        productVC.star = "\(data.HomeData[3][indexPath.item].star ?? "0")개"
+        productVC.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.pushViewController(productVC, animated: true)
     }
     
     func settingTabBar() {
@@ -131,6 +141,7 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         viewControllers.append(magazineVC!)
         viewControllers.append(lookbookVC!)
         viewControllers.append(contentVC!)
+        
         
         self.dataSource = self
         
