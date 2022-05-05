@@ -57,21 +57,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImg" translatesAutoresizingMaskIntoConstraints="NO" id="VSN-so-b4n">
                                 <rect key="frame" x="-5" y="54" width="422" height="788"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-WI-3MW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ryan1" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-WI-3MW">
                                 <rect key="frame" x="159" y="432" width="96" height="380"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart3" translatesAutoresizingMaskIntoConstraints="NO" id="yis-EF-BnK">
+                                <rect key="frame" x="265" y="40" width="163" height="92"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgf-0V-ppN">
+                                <rect key="frame" x="145" y="61" width="30" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="0.798828125" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m1x-Qs-u3w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="yis-EF-BnK" firstAttribute="top" secondItem="o5W-lH-8de" secondAttribute="top" constant="40" id="7om-ld-nRu"/>
+                            <constraint firstItem="yis-EF-BnK" firstAttribute="leading" secondItem="m1x-Qs-u3w" secondAttribute="leading" constant="265" id="BGZ-BR-Smz"/>
                             <constraint firstItem="VSN-so-b4n" firstAttribute="top" secondItem="m1x-Qs-u3w" secondAttribute="top" constant="10" id="Qx4-4V-hMa"/>
+                            <constraint firstItem="m1x-Qs-u3w" firstAttribute="bottom" secondItem="yis-EF-BnK" secondAttribute="bottom" constant="730" id="Wqf-BT-c4z"/>
+                            <constraint firstAttribute="trailing" secondItem="yis-EF-BnK" secondAttribute="trailing" constant="-14" id="eXU-wt-lnW"/>
                             <constraint firstItem="m1x-Qs-u3w" firstAttribute="trailing" secondItem="VSN-so-b4n" secondAttribute="trailing" constant="-3" id="evw-gl-Rqc"/>
+                            <constraint firstItem="Rgf-0V-ppN" firstAttribute="top" secondItem="m1x-Qs-u3w" secondAttribute="top" constant="17" id="nbw-XC-jcw"/>
+                            <constraint firstItem="Rgf-0V-ppN" firstAttribute="leading" secondItem="m1x-Qs-u3w" secondAttribute="leading" constant="145" id="tl0-xp-Dfb"/>
                             <constraint firstItem="VSN-so-b4n" firstAttribute="leading" secondItem="m1x-Qs-u3w" secondAttribute="leading" constant="-5" id="uXJ-gH-HqS"/>
                             <constraint firstItem="m1x-Qs-u3w" firstAttribute="bottom" secondItem="VSN-so-b4n" secondAttribute="bottom" constant="20" id="xo5-fO-dTa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="heart" destination="yis-EF-BnK" id="EOM-KC-I45"/>
                         <outlet property="ryan" destination="rdN-WI-3MW" id="tbp-6M-c45"/>
                     </connections>
                 </viewController>
@@ -79,11 +95,27 @@
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="99.776785714285708"/>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="uiu-bA-ojj">
+            <objects>
+                <viewController storyboardIdentifier="GameOverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n8Q-EK-bhQ" customClass="GameOverViewController" customModule="MultiThreadGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NjN-ur-fQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Qf-A0-JNW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVD-NC-aCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="117"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bgImg" width="596" height="971"/>
+        <image name="heart3" width="302" height="103"/>
         <image name="introImg" width="470" height="769"/>
-        <image name="ryan" width="282" height="380"/>
+        <image name="ryan1" width="282" height="380"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
