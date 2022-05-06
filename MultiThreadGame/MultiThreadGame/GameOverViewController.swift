@@ -6,6 +6,8 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var gameOverView: UIView!
     @IBOutlet weak var totalScore: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var restartView: UIView!
+    
     
     var score: Int = 0
     var scores = [Int]()
@@ -16,15 +18,23 @@ class GameOverViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         gameOverView.layer.borderWidth = 2.7
         gameOverView.layer.cornerRadius = 50
+        restartView.layer.borderWidth = 2
+        restartView.layer.cornerRadius = 20
         
         totalScore.text = String(score)
         
-        scores = UserDefaults.standard.object(forKey: "data1") as! [Int]
+       // scores = UserDefaults.standard.object(forKey: "data1") as! [Int]
         scores.sort(by: >)
         tableView.delegate = self
         tableView.dataSource = self
 
     }
+    
+    @IBAction func replay(_ sender: UIButton) {
+        dismiss(animated: false, completion: nil)
+    }
+    
+    
 }
 
 extension GameOverViewController: UITableViewDelegate, UITableViewDataSource {
@@ -38,6 +48,4 @@ extension GameOverViewController: UITableViewDelegate, UITableViewDataSource {
         cell.scoreLabel.text = String(scores[indexPath.row])
         return cell
     }
-    
-    
 }

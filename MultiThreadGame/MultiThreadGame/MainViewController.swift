@@ -1,5 +1,8 @@
 
 import UIKit
+import AVFoundation
+
+var soundEffect: AVAudioPlayer?
 
 class MainViewController: UIViewController {
 
@@ -21,13 +24,15 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playAudio()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        createTube()
         heart.image = UIImage(named: "heart3")
-        
         self.ryan.frame = CGRect(x: ryan.center.x, y: ryanY, width: 90, height: 110)
-        
         scores = UserDefaults.standard.object(forKey: "data1") as? [Int] ?? []
-        
         
         DispatchQueue.global().async {
             let isRunning = true
@@ -41,10 +46,6 @@ class MainViewController: UIViewController {
                 runLoop.run(until: Date().addingTimeInterval(0.1))
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        createTube()
     }
    
     
@@ -176,27 +177,40 @@ class MainViewController: UIViewController {
         case 3 :
             heart.image = UIImage(named: "heart2")
             heartCount -= 1
-            
-            
-            scores.append(self.score)
-            UserDefaults.standard.set(scores, forKey: "data1")
-            self.timer?.invalidate()
-            gameOver()
         case 2 :
             heart.image = UIImage(named: "heart1")
             heartCount -= 1
         default:
             heart.image = UIImage(named: "heart0")
+            scores.append(self.score)
+            UserDefaults.standard.set(scores, forKey: "data1")
+            gameOver()
             
         }
     }
     
     func gameOver() {
+        self.timer?.invalidate()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            soundEffect?.stop()
             guard let pauseVC = self.storyboard?.instantiateViewController(withIdentifier: "GameOverViewController") as? GameOverViewController else { return }
             pauseVC.modalPresentationStyle = .overCurrentContext
             pauseVC.score = self.score
             self.present(pauseVC, animated: false, completion: nil)
+        }
+    }
+    
+    func playAudio() {
+        let url = Bundle.main.url(forResource: "bgm", withExtension: "mp3")
+        if let url = url{
+            do {
+                soundEffect = try AVAudioPlayer(contentsOf: url)
+                guard let sound = soundEffect else { return }
+                sound.play()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
 }

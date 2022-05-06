@@ -16,6 +16,8 @@
 		922480B228251C3400AE45ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922480B128251C3400AE45ED /* MainViewController.swift */; };
 		922480B428251E0600AE45ED /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922480B328251E0600AE45ED /* GameOverViewController.swift */; };
 		922480B628251EB700AE45ED /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922480B528251EB700AE45ED /* ScoreCell.swift */; };
+		922480B828254CF500AE45ED /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 922480B728254CF500AE45ED /* bgm.mp3 */; };
+		922480BA282559B900AE45ED /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922480B9282559B900AE45ED /* ManualViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		922480B128251C3400AE45ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		922480B328251E0600AE45ED /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		922480B528251EB700AE45ED /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		922480B728254CF500AE45ED /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
+		922480B9282559B900AE45ED /* ManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				9224809B282517AD00AE45ED /* AppDelegate.swift */,
 				9224809D282517AD00AE45ED /* SceneDelegate.swift */,
 				922480A1282517AD00AE45ED /* Main.storyboard */,
+				922480B9282559B900AE45ED /* ManualViewController.swift */,
 				922480B528251EB700AE45ED /* ScoreCell.swift */,
 				922480B328251E0600AE45ED /* GameOverViewController.swift */,
 				922480B128251C3400AE45ED /* MainViewController.swift */,
@@ -72,6 +77,7 @@
 				922480A4282517AF00AE45ED /* Assets.xcassets */,
 				922480A6282517AF00AE45ED /* LaunchScreen.storyboard */,
 				922480A9282517AF00AE45ED /* Info.plist */,
+				922480B728254CF500AE45ED /* bgm.mp3 */,
 			);
 			path = MultiThreadGame;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 				922480A8282517AF00AE45ED /* LaunchScreen.storyboard in Resources */,
 				922480A5282517AF00AE45ED /* Assets.xcassets in Resources */,
 				922480A3282517AD00AE45ED /* Main.storyboard in Resources */,
+				922480B828254CF500AE45ED /* bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +159,7 @@
 				922480B028251A1300AE45ED /* IntroViewController.swift in Sources */,
 				922480B228251C3400AE45ED /* MainViewController.swift in Sources */,
 				922480B628251EB700AE45ED /* ScoreCell.swift in Sources */,
+				922480BA282559B900AE45ED /* ManualViewController.swift in Sources */,
 				922480B428251E0600AE45ED /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
