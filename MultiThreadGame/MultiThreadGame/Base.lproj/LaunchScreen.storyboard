@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImg" translatesAutoresizingMaskIntoConstraints="NO" id="5Kx-E1-Sas">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImg" translatesAutoresizingMaskIntoConstraints="NO" id="oMj-aM-qo7">
                                 <rect key="frame" x="-15" y="0.0" width="444" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="5Kx-E1-Sas" secondAttribute="bottom" id="DuW-37-hfS"/>
-                            <constraint firstItem="5Kx-E1-Sas" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-15" id="Lro-U7-m9k"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Kx-E1-Sas" secondAttribute="trailing" constant="-15" id="SLM-mO-xqi"/>
-                            <constraint firstItem="5Kx-E1-Sas" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ePb-Gi-u4N"/>
+                            <constraint firstAttribute="bottom" secondItem="oMj-aM-qo7" secondAttribute="bottom" id="13s-GY-ji2"/>
+                            <constraint firstItem="oMj-aM-qo7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="UV9-TB-JSm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oMj-aM-qo7" secondAttribute="trailing" constant="-15" id="ufl-bG-uDY"/>
+                            <constraint firstItem="oMj-aM-qo7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-15" id="wYM-Zg-V1g"/>
                         </constraints>
                     </view>
                 </viewController>

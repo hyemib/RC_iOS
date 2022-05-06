@@ -5,6 +5,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var heart: UIImageView!
     @IBOutlet weak var ryan: UIImageView!
+    @IBOutlet weak var totalScore: UILabel!
     
     var timer: Timer?
     var positionX: CGFloat!
@@ -14,14 +15,19 @@ class MainViewController: UIViewController {
     var snows = [UIImageView]()
     var heartCount = 3
     var tubeIndex = 0
+    var score = 0
+    var scores = [Int]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         heart.image = UIImage(named: "heart3")
         
         self.ryan.frame = CGRect(x: ryan.center.x, y: ryanY, width: 90, height: 110)
+        
+        scores = UserDefaults.standard.object(forKey: "data1") as? [Int] ?? []
+        
         
         DispatchQueue.global().async {
             let isRunning = true
@@ -64,9 +70,21 @@ class MainViewController: UIViewController {
             }
             self.view.addSubview(snow)
             for i in 0..<tubes.count {
-                print(tubes[i].frame.minX, tubes[i].frame.maxX)
-                if tubes[i].frame.minX <= touch.x && tubes[i].frame.maxX >= touch.x {
-                    tubes[i].removeFromSuperview()
+               // print(tubes[i].frame.minX, tubes[i].frame.maxX)
+                if tubes[i].frame.minX <= touch.x && tubes[i].frame.maxX >= touch.x && tubes[i].frame.minY <= touch.y && tubes[i].frame.maxY >= touch.y {
+                    switch tubes[i].image {
+                    case UIImage(named: "tube1-1"):
+                        tubes[i].image = UIImage(named: "tube2-1")
+                    case UIImage(named: "tube2-1"):
+                        tubes[i].image = UIImage(named: "tube3-1")
+                    default:
+                        tubes[i].image = UIImage(named: "tube4")
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                            self.tubes[i].removeFromSuperview()
+                            self.score += 200
+                            self.totalScore.text = String(self.score)
+                        }
+                    }
                 }
             }
         }
@@ -82,7 +100,7 @@ class MainViewController: UIViewController {
     }
     
     func createTube() {
-        let tube = UIImageView(image: UIImage(named: "tube1"))
+        let tube = UIImageView(image: UIImage(named: "tube1-1"))
         tube.contentMode = .scaleAspectFit
         let x = self.view.frame.width-100
         let y = self.view.frame.height/2+30
@@ -114,7 +132,14 @@ class MainViewController: UIViewController {
             tube.frame = CGRect(x: tubePosition, y: rangeY+moveY, width: width, height: heiht)
         }) { _ in
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                tube.image = UIImage(named: "tube3")
+                switch tube.image {
+                case UIImage(named: "tube1-1"):
+                    tube.image = UIImage(named: "tube1-2")
+                case UIImage(named: "tube2-1"):
+                    tube.image = UIImage(named: "tube2-2")
+                default:
+                    tube.image = UIImage(named: "tube3-2")
+                }
                 let snow = UIImageView(image: UIImage(named: "snow"))
                 snow.contentMode = .scaleAspectFit
                 snow.frame = CGRect(x: tubePosition, y: rangeY+moveY+50, width: 40, height: 40)
@@ -125,15 +150,22 @@ class MainViewController: UIViewController {
                     self.view.addSubview(snow)
                 }
                 
-                if self.ryanPosition >= rangeX-30 && self.ryanPosition <= rangeX+30 {
-                    self.ryan.image = UIImage(named: "ryan2")
+                if self.ryan.frame.minX <= tubePosition && self.ryan.frame.maxX >= tubePosition {
+                    self.ryan.image = UIImage(named: "ryan1-2")
                     self.changeHeart()
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) {
-                    tube.image = UIImage(named: "tube1")
+                    switch tube.image {
+                    case UIImage(named: "tube1-2"):
+                        tube.image = UIImage(named: "tube1-1")
+                    case UIImage(named: "tube2-2"):
+                        tube.image = UIImage(named: "tube2-1")
+                    default:
+                        tube.image = UIImage(named: "tube3-1")
+                    }
                     snow.removeFromSuperview()
-                    self.ryan.image = UIImage(named: "ryan1")
+                    self.ryan.image = UIImage(named: "ryan1-1")
                 }
             }
         }
@@ -144,23 +176,27 @@ class MainViewController: UIViewController {
         case 3 :
             heart.image = UIImage(named: "heart2")
             heartCount -= 1
+            
+            
+            scores.append(self.score)
+            UserDefaults.standard.set(scores, forKey: "data1")
+            self.timer?.invalidate()
+            gameOver()
         case 2 :
             heart.image = UIImage(named: "heart1")
             heartCount -= 1
         default:
             heart.image = UIImage(named: "heart0")
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                self.timer?.invalidate()
-                self.gameOver()
-            }
+            
         }
     }
     
     func gameOver() {
-        /*
-        guard let pauseVC = self.storyboard?.instantiateViewController(withIdentifier: "GameOverViewController") as? GameOverViewController else { return }
-        pauseVC.modalPresentationStyle = .fullScreen
-        self.present(pauseVC, animated: false, completion: nil)*/
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            guard let pauseVC = self.storyboard?.instantiateViewController(withIdentifier: "GameOverViewController") as? GameOverViewController else { return }
+            pauseVC.modalPresentationStyle = .overCurrentContext
+            pauseVC.score = self.score
+            self.present(pauseVC, animated: false, completion: nil)
+        }
     }
 }
-

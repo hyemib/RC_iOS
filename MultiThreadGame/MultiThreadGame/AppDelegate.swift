@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MultiThreadGame
 //
-//  Created by hyemi on 2022/05/03.
+//  Created by hyemi on 2022/05/06.
 //
 
 import UIKit
