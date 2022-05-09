@@ -14,12 +14,13 @@ class MainViewController: UIViewController {
     var positionX: CGFloat!
     var ryanY: CGFloat! = 700
     var ryanPosition: CGFloat! = 215
-    var tubes = [UIImageView]()
+    var tubes = [UIImageView:Int]()
     var snows = [UIImageView]()
+    var snows2 = [UIImageView]()
     var heartCount = 3
-    var tubeIndex = 0
     var score = 0
     var scores = [Int]()
+    var index = 0
     
     
     override func viewDidLoad() {
@@ -37,9 +38,10 @@ class MainViewController: UIViewController {
         DispatchQueue.global().async {
             let isRunning = true
             let runLoop = RunLoop.current
-            self.timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
+            self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
                 DispatchQueue.main.sync {
                     self.createTube()
+
                 }
             }
             while isRunning {
@@ -55,7 +57,6 @@ class MainViewController: UIViewController {
             UIView.animate(withDuration: 0.3) {
                 self.ryan.frame = CGRect(x: touch.x, y: self.ryanY, width: 90, height: 110)
                 self.ryanPosition = touch.x
-
             }
         }
         if touch.y <= 700 {
@@ -69,24 +70,6 @@ class MainViewController: UIViewController {
                 })
             }
             self.view.addSubview(snow)
-            for i in 0..<tubes.count {
-               // print(tubes[i].frame.minX, tubes[i].frame.maxX)
-                if tubes[i].frame.minX <= touch.x && tubes[i].frame.maxX >= touch.x && tubes[i].frame.minY <= touch.y && tubes[i].frame.maxY >= touch.y {
-                    switch tubes[i].image {
-                    case UIImage(named: "tube1-1"):
-                        tubes[i].image = UIImage(named: "tube2-1")
-                    case UIImage(named: "tube2-1"):
-                        tubes[i].image = UIImage(named: "tube3-1")
-                    default:
-                        tubes[i].image = UIImage(named: "tube4")
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-                            self.tubes[i].removeFromSuperview()
-                            self.score += 200
-                            self.totalScore.text = String(self.score)
-                        }
-                    }
-                }
-            }
         }
     }
 
@@ -95,6 +78,31 @@ class MainViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) { [self] in
             for snow in snows {
                 snow.removeFromSuperview()
+            }
+        }
+        let touch = touches.first!.location(in: self.view)
+        for (key,value) in tubes {
+           // print(tubes[i].frame.minX, tubes[i].frame.maxX, touch.x)
+           // print(tubes[i].frame.minY, tubes[i].frame.maxY, touch.y)
+            if key.frame.minX <= touch.x && key.frame.maxX >= touch.x && key.frame.minY <= touch.y && key.frame.maxY >= touch.y {
+                print("")
+                switch value {
+                case 3:
+                    key.image = UIImage(named: "tube2-1")
+                    tubes[key]! -= 1
+                case 2:
+                    key.image = UIImage(named: "tube3-1")
+                    tubes[key]! -= 1
+                default:
+                    key.image = UIImage(named: "tube4")
+                    self.score += 200
+                    self.totalScore.text = String(self.score)
+                    self.tubes.removeValue(forKey: key)
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                        key.removeFromSuperview()
+                        
+                    }
+                }
             }
         }
     }
@@ -106,66 +114,111 @@ class MainViewController: UIViewController {
         let y = self.view.frame.height/2+30
         let rangeX =  CGFloat(Int.random(in: 10...Int(x)))
         let rangeY = y/2+CGFloat(Int.random(in: 0...50))
-        let tubeWidth = 60
-        let tubeHeiht = 80
-        tube.frame = CGRect(x: rangeX, y: 210, width: 60, height: 80)
-        tubes.append(tube)
-        tubeIndex += 1
+        tube.frame = CGRect(x: rangeX, y: 220, width: 60, height: 80)
+        tubes.updateValue(3, forKey: tube)
         
-        moveTube(tube: tube, rangeX: rangeX, rangeY: rangeY, moveY: 0, width: CGFloat(tubeWidth+8), heiht: CGFloat(tubeHeiht+8))
-        
-        self.view.addSubview(tube)
-        /*
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-            
-            self.moveTube(tube: tube, rangeX: rangeX, rangeY: rangeY, moveY: 90, width: CGFloat(tubeWidth+15), heiht: CGFloat(tubeHeiht+15))
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                self.moveTube(tube: tube, rangeX: rangeX, rangeY: rangeY, moveY: 220, width: CGFloat(tubeWidth+25), heiht: CGFloat(tubeHeiht+25))
-            }
-        }*/
-        
+        moveTube(tube: tube, rangeX: rangeX, rangeY: rangeY)
+
     }
     
-    func moveTube(tube: UIImageView, rangeX: CGFloat, rangeY: CGFloat, moveY: CGFloat, width: CGFloat, heiht: CGFloat) {
-        let tubePosition = CGFloat(Int.random(in: Int(rangeX-60)...Int(rangeX+60)))
-        UIView.animate(withDuration: 3, animations: {
-            tube.frame = CGRect(x: tubePosition, y: rangeY+moveY, width: width, height: heiht)
-        }) { _ in
-            switch tube.image {
-            case UIImage(named: "tube1-1"):
-                tube.image = UIImage(named: "tube1-2")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
-                    tube.image = UIImage(named: "tube1-1")
-                }
-            case UIImage(named: "tube2-1"):
-                tube.image = UIImage(named: "tube2-2")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
-                    tube.image = UIImage(named: "tube2-1")
-                }
-            default:
-                tube.image = UIImage(named: "tube3-2")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
-                    tube.image = UIImage(named: "tube3-1")
+    func moveTube(tube: UIImageView, rangeX: CGFloat, rangeY: CGFloat) {
+        var tubeX: CGFloat!
+        UIView.animate(withDuration: 5, animations: {
+            var tubePositionX = CGFloat(Int.random(in: Int(rangeX-60)...Int(rangeX+60)))
+            if tubePositionX <= 20 {
+                tubePositionX = 20
+            } else if tubePositionX >= self.view.frame.width-20 {
+                tubePositionX = self.view.frame.width-20
+            }
+            tubeX = tubePositionX
+            tube.frame = CGRect(x: tubePositionX, y: rangeY+50, width: 68, height: 88)
+            DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+                if self.tubes.keys.contains(tube) {
+                    DispatchQueue.main.async() {
+                        self.makeSonow(tube: tube, rangeX: tube.frame.minX, rangeY: tube.frame.minY, tubePositionX: tubeX)
+                    }
                 }
             }
-            
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4.5) {
+            UIView.animate(withDuration: 4.5, animations: {
+                var tubePositionX = CGFloat(Int.random(in: Int(rangeX-60)...Int(rangeX+60)))
+                if tubePositionX <= 20 {
+                    tubePositionX = 20
+                } else if tubePositionX >= self.view.frame.width-20 {
+                    tubePositionX = self.view.frame.width-20
+                }
+                
+                if self.tubes.keys.contains(tube) {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                        self.makeSonow(tube: tube, rangeX: tube.frame.minX, rangeY: tube.frame.minY-100, tubePositionX: tubeX)
+                    }
+                }
+                tube.frame = CGRect(x: tubePositionX, y: rangeY+200, width: 75, height: 96)
+            })
         }
-        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8.8) {
+            UIView.animate(withDuration: 4.2, animations: {
+                var tubePositionX = CGFloat(Int.random(in: Int(rangeX-60)...Int(rangeX+60)))
+                if tubePositionX <= 20 {
+                    tubePositionX = 20
+                } else if tubePositionX >= self.view.frame.width-20 {
+                    tubePositionX = self.view.frame.width-20
+                }
+                
+                if self.tubes.keys.contains(tube) {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                        self.makeSonow(tube: tube, rangeX: tube.frame.minX, rangeY: tube.frame.minY-50, tubePositionX: tubeX)
+                    }
+                }
+                
+                tube.frame = CGRect(x: tubePositionX, y: rangeY+300, width: 83, height: 104)
+            }) { _ in
+                
+            }
+        }
+        self.view.addSubview(tube)
+    }
+    
+    func makeSonow(tube: UIImageView, rangeX: CGFloat, rangeY: CGFloat, tubePositionX: CGFloat) {
             DispatchQueue.main.async {
                 let snow = UIImageView(image: UIImage(named: "snow"))
                 snow.contentMode = .scaleAspectFit
-                snow.frame = CGRect(x: tube.frame.minX, y: rangeY+moveY+50, width: 40, height: 40)
+                snow.frame = CGRect(x: tubePositionX, y: rangeY+50, width: 40, height: 40)
+                self.snows2.append(snow)
                 DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.6, animations: {
-                        snow.frame = CGRect(x: tubePosition, y: self.view.frame.height, width: 40, height: 40)
-                    })
+                    UIView.animate(withDuration: 1.5, animations: {
+                        snow.frame = CGRect(x: tubePositionX, y: self.view.frame.height, width: 40, height: 40)
+                    }) { _ in
+                        if self.ryan.frame.minX <= tubePositionX+20 && self.ryan.frame.maxX >= tubePositionX {
+                            self.ryan.image = UIImage(named: "ryan1-2")
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+                                self.ryan.image = UIImage(named: "ryan1-1")
+                            }
+                            self.changeHeart()
+                            
+                        }
+                    }
                     self.view.addSubview(snow)
                 }
-                if self.ryan.frame.minX <= tube.frame.minX && self.ryan.frame.maxX >= tube.frame.minX {
-                    self.ryan.image = UIImage(named: "ryan1-2")
-                    //self.changeHeart()
+                switch tube.image {
+                case UIImage(named: "tube1-1"):
+                    tube.image = UIImage(named: "tube1-2")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+                        tube.image = UIImage(named: "tube1-1")
+                    }
+                case UIImage(named: "tube2-1"):
+                    tube.image = UIImage(named: "tube2-2")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+                        tube.image = UIImage(named: "tube2-1")
+                    }
+                default:
+                    tube.image = UIImage(named: "tube3-2")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+                        tube.image = UIImage(named: "tube3-1")
+                    }
                 }
-            }
         }
     }
     
@@ -180,8 +233,7 @@ class MainViewController: UIViewController {
             heartCount -= 1
         default:
             heart.image = UIImage(named: "heart0")
-            scores.append(self.score)
-            UserDefaults.standard.set(scores, forKey: "data1")
+            
             gameOver()
             
         }
@@ -189,7 +241,8 @@ class MainViewController: UIViewController {
     
     func gameOver() {
         self.timer?.invalidate()
-        
+        scores.append(self.score)
+        UserDefaults.standard.set(scores, forKey: "data1")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             soundEffect?.stop()
             guard let pauseVC = self.storyboard?.instantiateViewController(withIdentifier: "GameOverViewController") as? GameOverViewController else { return }

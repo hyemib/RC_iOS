@@ -15,7 +15,7 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
         gameOverView.layer.borderWidth = 2.7
         gameOverView.layer.cornerRadius = 50
         restartView.layer.borderWidth = 2
@@ -23,7 +23,7 @@ class GameOverViewController: UIViewController {
         
         totalScore.text = String(score)
         
-       // scores = UserDefaults.standard.object(forKey: "data1") as! [Int]
+        scores = UserDefaults.standard.object(forKey: "data1") as! [Int]
         scores.sort(by: >)
         tableView.delegate = self
         tableView.dataSource = self
@@ -31,7 +31,9 @@ class GameOverViewController: UIViewController {
     }
     
     @IBAction func replay(_ sender: UIButton) {
-        dismiss(animated: false, completion: nil)
+        guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
+        mainVC.modalPresentationStyle = .overCurrentContext
+        self.present(mainVC, animated: false, completion: nil)
     }
     
     
