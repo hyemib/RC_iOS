@@ -1,11 +1,6 @@
-//
-//  AppDelegate.swift
-//  wavve
-//
-//  Created by hyemi on 2022/05/13.
-//
 
 import UIKit
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        KakaoSDK.initSDK(appKey: "1ddb267b87180fdaf3fabb450bc7275c")
         return true
     }
 
