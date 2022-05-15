@@ -23,6 +23,8 @@
 		92455DE42830FF8E00FCD2F3 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */; };
 		92455DE62831060100FCD2F3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DE52831060100FCD2F3 /* Movie.swift */; };
 		92455DE92831497F00FCD2F3 /* TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DE82831497F00FCD2F3 /* TV.swift */; };
+		92455DEB28315FC800FCD2F3 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DEA28315FC800FCD2F3 /* CollectionViewCell2.swift */; };
+		92455DED283166E700FCD2F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DEC283166E700FCD2F3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +59,8 @@
 		92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
 		92455DE52831060100FCD2F3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		92455DE82831497F00FCD2F3 /* TV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV.swift; sourceTree = "<group>"; };
+		92455DEA28315FC800FCD2F3 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
+		92455DEC283166E700FCD2F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AC6AB07BA00152222F259368 /* Pods-wavve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wavve.release.xcconfig"; path = "Target Support Files/Pods-wavve/Pods-wavve.release.xcconfig"; sourceTree = "<group>"; };
 		E6B53A2A90CED373D9A727BD /* Pods_wavve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wavve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11D3D5C2BC829026564E8F5 /* Pods-wavve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wavve.debug.xcconfig"; path = "Target Support Files/Pods-wavve/Pods-wavve.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				92455DC3282E380A00FCD2F3 /* SceneDelegate.swift */,
 				92455DC5282E380A00FCD2F3 /* ViewController.swift */,
 				92455DC7282E380A00FCD2F3 /* Main.storyboard */,
+				92455DEC283166E700FCD2F3 /* DetailViewController.swift */,
+				92455DEA28315FC800FCD2F3 /* CollectionViewCell2.swift */,
 				92455DE82831497F00FCD2F3 /* TV.swift */,
 				92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */,
 				92455DDD282EA77900FCD2F3 /* LoginJoinViewController2.swift */,
@@ -248,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92455DED283166E700FCD2F3 /* DetailViewController.swift in Sources */,
 				92455DDA282E989B00FCD2F3 /* SearchViewController.swift in Sources */,
 				92455DD6282E43FE00FCD2F3 /* LoginViewController.swift in Sources */,
 				92455DC6282E380A00FCD2F3 /* ViewController.swift in Sources */,
@@ -257,6 +264,7 @@
 				92455DC2282E380A00FCD2F3 /* AppDelegate.swift in Sources */,
 				92455DC4282E380A00FCD2F3 /* SceneDelegate.swift in Sources */,
 				92455DDC282E9CE000FCD2F3 /* HomeViewController.swift in Sources */,
+				92455DEB28315FC800FCD2F3 /* CollectionViewCell2.swift in Sources */,
 				92455DD8282E89F800FCD2F3 /* LoginJoinViewController.swift in Sources */,
 				92455DE42830FF8E00FCD2F3 /* CollectionViewCell1.swift in Sources */,
 			);
