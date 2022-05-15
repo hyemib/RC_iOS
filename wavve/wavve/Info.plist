@@ -12,6 +12,16 @@
 				<string>kakao1ddb267b87180fdaf3fabb450bc7275c</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>sociallogin</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>sociallogin</string>
+			</array>
+		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>

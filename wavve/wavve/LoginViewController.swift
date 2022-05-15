@@ -19,6 +19,9 @@ class LoginViewController: UIViewController {
         kakaoView.layer.cornerRadius = kakaoView.frame.width / 2
     }
     
+    @IBAction func returnButton(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     //앱으로 로그인
     // 카카오 로그인 버튼 클릭 시
     

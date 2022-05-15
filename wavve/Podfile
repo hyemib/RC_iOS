@@ -9,5 +9,6 @@ target 'wavve' do
   pod 'Alamofire', '~> 5.2'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  #pod 'naveridlogin-sdk-ios'
 
 end
