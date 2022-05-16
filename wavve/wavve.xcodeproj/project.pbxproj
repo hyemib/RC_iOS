@@ -17,7 +17,6 @@
 		92455DD8282E89F800FCD2F3 /* LoginJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DD7282E89F800FCD2F3 /* LoginJoinViewController.swift */; };
 		92455DDA282E989B00FCD2F3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DD9282E989B00FCD2F3 /* SearchViewController.swift */; };
 		92455DDC282E9CE000FCD2F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DDB282E9CE000FCD2F3 /* HomeViewController.swift */; };
-		92455DDE282EA77900FCD2F3 /* LoginJoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DDD282EA77900FCD2F3 /* LoginJoinViewController2.swift */; };
 		92455DE0282EAF3700FCD2F3 /* Pods_wavve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92455DDF282EAF3700FCD2F3 /* Pods_wavve.framework */; };
 		92455DE1282EAF3700FCD2F3 /* Pods_wavve.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92455DDF282EAF3700FCD2F3 /* Pods_wavve.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92455DE42830FF8E00FCD2F3 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */; };
@@ -54,7 +53,6 @@
 		92455DD7282E89F800FCD2F3 /* LoginJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginJoinViewController.swift; sourceTree = "<group>"; };
 		92455DD9282E989B00FCD2F3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		92455DDB282E9CE000FCD2F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		92455DDD282EA77900FCD2F3 /* LoginJoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginJoinViewController2.swift; sourceTree = "<group>"; };
 		92455DDF282EAF3700FCD2F3 /* Pods_wavve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_wavve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
 		92455DE52831060100FCD2F3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				92455DEA28315FC800FCD2F3 /* CollectionViewCell2.swift */,
 				92455DE82831497F00FCD2F3 /* TV.swift */,
 				92455DE32830FF8E00FCD2F3 /* CollectionViewCell1.swift */,
-				92455DDD282EA77900FCD2F3 /* LoginJoinViewController2.swift */,
 				92455DDB282E9CE000FCD2F3 /* HomeViewController.swift */,
 				92455DE52831060100FCD2F3 /* Movie.swift */,
 				92455DD9282E989B00FCD2F3 /* SearchViewController.swift */,
@@ -258,7 +255,6 @@
 				92455DDA282E989B00FCD2F3 /* SearchViewController.swift in Sources */,
 				92455DD6282E43FE00FCD2F3 /* LoginViewController.swift in Sources */,
 				92455DC6282E380A00FCD2F3 /* ViewController.swift in Sources */,
-				92455DDE282EA77900FCD2F3 /* LoginJoinViewController2.swift in Sources */,
 				92455DE92831497F00FCD2F3 /* TV.swift in Sources */,
 				92455DE62831060100FCD2F3 /* Movie.swift in Sources */,
 				92455DC2282E380A00FCD2F3 /* AppDelegate.swift in Sources */,

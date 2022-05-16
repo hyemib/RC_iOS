@@ -2,13 +2,17 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
+    weak var delegate: SendDelegate?
+    
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var kakaoView: UIView!
+    @IBOutlet weak var googleView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,7 @@ class LoginViewController: UIViewController {
         passTextField.layer.cornerRadius = 5
         loginBtn.layer.cornerRadius = 30
         kakaoView.layer.cornerRadius = kakaoView.frame.width / 2
+        googleView.layer.cornerRadius =  googleView.frame.width / 2
     }
     
     @IBAction func returnButton(_ sender: Any) {
@@ -34,6 +39,17 @@ class LoginViewController: UIViewController {
             loginWithWeb()
         }
     }
+    @IBAction func googleLoginButtonPress(_ sender: Any) {
+        let config = GIDConfiguration(clientID: "1014023707688-2a9a4r639rv1n4e5njf3vc5mjou9uqgv.apps.googleusercontent.com")
+                
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { user, error in
+            if error != nil { return }
+            guard let userName = user?.profile?.name else { return }
+            self.delegate?.send(name: userName)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+        
+    }
 }
 
 // MARK: - Kakao Login Extensions
@@ -47,12 +63,12 @@ extension LoginViewController {
                 print(error)
             } else {
                 print("loginWithKakaoTalk() success.")
-                
                 UserApi.shared.me {(user, error) in
                     if let error = error {
                         print(error)
                     } else {
-                        print("성공")
+                        self.delegate?.send(name: user?.kakaoAccount?.profile?.nickname ?? "")
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
                     }
                 }
             }
@@ -71,11 +87,11 @@ extension LoginViewController {
                     if let error = error {
                         print(error)
                     } else {
-                        print("성공")
+                        self.delegate?.send(name: user?.kakaoAccount?.profile?.nickname ?? "")
+                        self.presentingViewController?.dismiss(animated: true, completion: nil)
                     }
                 }
             }
         }
     }
-
 }

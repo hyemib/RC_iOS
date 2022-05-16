@@ -10,17 +10,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kakao1ddb267b87180fdaf3fabb450bc7275c</string>
+                <string>com.googleusercontent.apps.1014023707688-2a9a4r639rv1n4e5njf3vc5mjou9uqgv</string>
 			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>sociallogin</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>sociallogin</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>LSApplicationQueriesSchemes</key>
