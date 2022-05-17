@@ -110,6 +110,19 @@
                         <color key="textColor" red="0.94117647410000005" green="0.59607845540000004" blue="0.31372550129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CI3-RK-Dna">
+                        <rect key="frame" x="147" y="218" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="34y-3k-GTi"/>
+                            <constraint firstAttribute="width" constant="15" id="dVc-3P-KE6"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="suit.heart.fill" catalog="system"/>
+                        <connections>
+                            <action selector="pressedHeartBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3ew-YQ-3iR"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -117,7 +130,7 @@
                 <constraint firstItem="6KT-s2-aFl" firstAttribute="top" secondItem="Ea8-D5-HcW" secondAttribute="bottom" constant="34" id="3vi-DO-3Dy"/>
                 <constraint firstItem="6KT-s2-aFl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="5Bl-2H-Wd9"/>
                 <constraint firstAttribute="bottom" secondItem="bp1-9m-BAj" secondAttribute="bottom" constant="30" id="71g-kA-Zrf"/>
-                <constraint firstAttribute="trailing" secondItem="Ea8-D5-HcW" secondAttribute="trailing" id="9qN-8F-w3n"/>
+                <constraint firstItem="CI3-RK-Dna" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="218" id="HVi-tk-JqG"/>
                 <constraint firstItem="bp1-9m-BAj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="QqS-by-lqh"/>
                 <constraint firstItem="Ea8-D5-HcW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="R5k-sw-aEx"/>
                 <constraint firstAttribute="trailing" secondItem="W6e-Jo-ye4" secondAttribute="trailing" constant="10" id="Sh9-4y-y79"/>
@@ -126,6 +139,7 @@
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Ea8-D5-HcW" secondAttribute="bottom" constant="190" id="UX3-vG-QAT"/>
                 <constraint firstItem="3cX-4G-fMy" firstAttribute="centerY" secondItem="AWF-xX-Dg0" secondAttribute="centerY" id="V7Y-FM-Hzx"/>
                 <constraint firstItem="Ea8-D5-HcW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="aeV-gt-PXu"/>
+                <constraint firstAttribute="trailing" secondItem="CI3-RK-Dna" secondAttribute="trailing" constant="10" id="eqb-WR-vMi"/>
                 <constraint firstItem="W6e-Jo-ye4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="fBm-SV-91f"/>
                 <constraint firstItem="bp1-9m-BAj" firstAttribute="top" secondItem="S3F-SI-nFy" secondAttribute="bottom" constant="10" id="fqy-9b-M2G"/>
                 <constraint firstItem="W6e-Jo-ye4" firstAttribute="top" secondItem="6KT-s2-aFl" secondAttribute="bottom" constant="5" id="h4l-wQ-Qae"/>
@@ -133,9 +147,11 @@
                 <constraint firstItem="S3F-SI-nFy" firstAttribute="top" secondItem="W6e-Jo-ye4" secondAttribute="bottom" constant="10" id="og7-p4-EmS"/>
                 <constraint firstItem="3cX-4G-fMy" firstAttribute="leading" secondItem="YWi-8M-YWq" secondAttribute="trailing" constant="2" id="qBj-Ww-zNb"/>
                 <constraint firstItem="S3F-SI-nFy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="sRK-KZ-nNc"/>
+                <constraint firstAttribute="trailing" secondItem="Ea8-D5-HcW" secondAttribute="trailing" id="uoT-2k-xks"/>
             </constraints>
             <size key="customSize" width="172" height="350"/>
             <connections>
+                <outlet property="heartBtn" destination="CI3-RK-Dna" id="oas-FG-PYq"/>
                 <outlet property="heartTitle" destination="bpT-Jq-BpI" id="0fH-Ng-Kme"/>
                 <outlet property="image" destination="Ea8-D5-HcW" id="lYY-8w-JfS"/>
                 <outlet property="price" destination="S3F-SI-nFy" id="QMg-tI-Bia"/>
@@ -148,5 +164,6 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
     </resources>
 </document>

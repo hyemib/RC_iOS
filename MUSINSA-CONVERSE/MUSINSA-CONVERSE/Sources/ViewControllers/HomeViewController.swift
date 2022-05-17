@@ -3,7 +3,7 @@ import UIKit
 import Tabman
 import Pageboy
 
-class HomeViewController: TabmanViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: TabmanViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeartDelegate {
     
     private var viewControllers: Array<UIViewController> = []
     
@@ -52,6 +52,13 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         productCollectionView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
     }
     
+    func pressedHeartBtn(for index: Int, like: Bool) {
+        if like == true {
+            data.HomeData[3][index].like = false
+        } else {
+            data.HomeData[3][index].like = true
+        }
+    }
     
     @objc func moveCart() {
         guard let CartVC = storyboard?.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
@@ -91,14 +98,21 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         let img = UIImage(named: data.HomeData[3][indexPath.item].imageName)
         let title = data.HomeData[3][indexPath.item].title
         let price = data.HomeData[3][indexPath.item].price
-        let star = data.HomeData[3][indexPath.item].star
-        let heart = data.HomeData[3][indexPath.item].heart
+        let star = data.HomeData[3][indexPath.item].starCount
+        let heart = data.HomeData[3][indexPath.item].heartCount
         cell.image.contentMode = .scaleAspectFill
         cell.image.image = img
         cell.title.text = title
         cell.price.text = price
         cell.starTitle.text = star
         cell.heartTitle.text = heart
+        cell.delegate = self
+        cell.index = indexPath.item
+        if data.HomeData[3][indexPath.item].like == true {
+            cell.isTouched = true
+        } else {
+            cell.isTouched = false
+        }
         
         return cell
     }
@@ -124,7 +138,7 @@ class HomeViewController: TabmanViewController, UICollectionViewDelegate, UIColl
         productVC.title1 = data.HomeData[3][indexPath.item].title ?? ""
         productVC.price = data.HomeData[3][indexPath.item].price ?? ""
         productVC.image = UIImage(named: data.HomeData[3][indexPath.item].imageName)
-        productVC.star = "\(data.HomeData[3][indexPath.item].star ?? "0")개"
+        productVC.star = "\(data.HomeData[3][indexPath.item].starCount ?? "0")개"
         productVC.modalPresentationStyle = .overCurrentContext
         self.navigationController?.pushViewController(productVC, animated: true)
     }

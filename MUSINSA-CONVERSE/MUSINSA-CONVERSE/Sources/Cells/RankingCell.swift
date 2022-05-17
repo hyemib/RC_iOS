@@ -12,5 +12,4 @@ class RankingCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

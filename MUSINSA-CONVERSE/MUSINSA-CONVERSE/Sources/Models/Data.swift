@@ -27,19 +27,22 @@ class Data: NSObject {
             HomeModel(imageName: "productImg6", price: "95,000원"),
             HomeModel(imageName: "productImg7", price: "75,000원")
         ],[
-            HomeModel(imageName: "productImg1", title: "척테일러 올스타 블랙 옥스M9166C", price: "55,000원", star: "31,088", heart: "9,999+"),
-            HomeModel(imageName: "productImg2", title: "척 70 클래식 블랙 162058C", price: "95,000원", star: "34,586", heart: "9,999+"),
-            HomeModel(imageName: "productImg3", title: "척 70 클래식 블랙 162050C", price: "99,000원", star: "27,123", heart: "9,999+"),
-            HomeModel(imageName: "productImg4", title: "척테일러 올스타 블랙 하이 M9160C", price: "59,000원", star: "16,340", heart: "9,999+"),
-            HomeModel(imageName: "productImg5", title: "척테일러 올스타 화이트 옥스 M7652C", price: "55,000원", star: "6,299", heart: "9,999+"),
-            HomeModel(imageName: "productImg6", title: "척 70 클래식 파치먼트 162062C", price: "95,000원", star: "10,369", heart: "9,999+"),
-            HomeModel(imageName: "productImg7", title: "척테일러 올스타 캔버스 리프트 화이트 560251C", price: "75,000원", star: "3,545", heart: "9,999+"),
-            HomeModel(imageName: "productImg8", title: "런스타 하이크 블랙 166800C", price: "109,000원", star: "6,158", heart: "9,999+"),
-            HomeModel(imageName: "productImg9", title: "척 70 클래식 파치먼트 162053C", price: "109,000원", star: "6,056", heart: "9,999+"),
-            HomeModel(imageName: "productImg10", title: "척 70 빈티지 캔버스 하이트 162065C", price: "99,000원", star: "4,038", heart: "9,999+"),
-            HomeModel(imageName: "productImg11", title: "척테일러 올스타 화이트 하이 M7650C", price: "95,000원", star: "2,166", heart: "9,630"),
-            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", star: "1,522", heart: "8,672")
+            HomeModel(imageName: "productImg1", title: "척테일러 올스타 블랙 옥스M9166C", price: "55,000원", starCount: "31,088", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg2", title: "척 70 클래식 블랙 162058C", price: "95,000원", starCount: "34,586", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg3", title: "척 70 클래식 블랙 162050C", price: "99,000원", starCount: "27,123", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg4", title: "척테일러 올스타 블랙 하이 M9160C", price: "59,000원", starCount: "16,340", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg5", title: "척테일러 올스타 화이트 옥스 M7652C", price: "55,000원", starCount: "6,299", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg6", title: "척 70 클래식 파치먼트 162062C", price: "95,000원", starCount: "10,369", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg7", title: "척테일러 올스타 캔버스 리프트 화이트 560251C", price: "75,000원", starCount: "3,545", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg8", title: "런스타 하이크 블랙 166800C", price: "109,000원", starCount: "6,158", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg9", title: "척 70 클래식 파치먼트 162053C", price: "109,000원", starCount: "6,056", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg10", title: "척 70 빈티지 캔버스 하이트 162065C", price: "99,000원", starCount: "4,038", heartCount: "9,999+", like: false),
+            HomeModel(imageName: "productImg11", title: "척테일러 올스타 화이트 하이 M7650C", price: "95,000원", starCount: "2,166", heartCount: "9,630", like: false),
+            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", starCount: "1,522", heartCount: "8,672", like: false)
            
+        ],[
+            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", starCount: "1,522", heartCount: "8,672", like: true),
+            HomeModel(imageName: "productImg7", title: "척테일러 올스타 캔버스 리프트 화이트 560251C", price: "75,000원", starCount: "3,545", heartCount: "9,999+", like: false)
         ]]
         
     }
@@ -48,8 +51,9 @@ struct HomeModel {
     var imageName: String = ""
     var title: String?
     var price: String?
-    var star: String?
-    var heart: String?
+    var starCount: String?
+    var heartCount: String?
+    var like: Bool?
 }
 
 
