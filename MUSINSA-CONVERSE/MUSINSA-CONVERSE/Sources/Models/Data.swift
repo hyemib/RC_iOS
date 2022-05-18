@@ -40,11 +40,7 @@ class Data: NSObject {
             HomeModel(imageName: "productImg11", title: "척테일러 올스타 화이트 하이 M7650C", price: "95,000원", starCount: "2,166", heartCount: "9,630", like: false),
             HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", starCount: "1,522", heartCount: "8,672", like: false)
            
-        ],[
-            HomeModel(imageName: "productImg12", title: "척테일러 올스타 무브 블랙 570256C", price: "59,000원", starCount: "1,522", heartCount: "8,672", like: true),
-            HomeModel(imageName: "productImg7", title: "척테일러 올스타 캔버스 리프트 화이트 560251C", price: "75,000원", starCount: "3,545", heartCount: "9,999+", like: false)
         ]]
-        
     }
 }
 struct HomeModel {

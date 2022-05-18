@@ -3,7 +3,6 @@ import UIKit
 
 var cartList = CartList()
 
-
 class FirstTabBarController: UIViewController, UITableViewDelegate, UITableViewDataSource, HeaderViewDelegate {
     
     var checks = [Int]()

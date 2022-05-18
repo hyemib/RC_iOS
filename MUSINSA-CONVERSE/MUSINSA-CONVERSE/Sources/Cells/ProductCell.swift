@@ -7,6 +7,7 @@ protocol HeartDelegate: AnyObject {
 
 class ProductCell: UICollectionViewCell {
 
+    var data = Data.shared
     var delegate: HeartDelegate?
     var index: Int?
     
@@ -14,6 +15,7 @@ class ProductCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var starTitle: UILabel!
+    @IBOutlet weak var starStackView: UIStackView!
     @IBOutlet weak var heartTitle: UILabel!
     @IBOutlet weak var heartBtn: UIButton!
     
@@ -25,6 +27,7 @@ class ProductCell: UICollectionViewCell {
         guard let idx = index else { return }
         if sender.isSelected {
             isTouched = true
+            likeList.add(imageName: data.HomeData[3][idx].imageName, title: data.HomeData[3][idx].title ?? "", price: data.HomeData[3][idx].price ?? "", starCount: data.HomeData[3][idx].starCount ?? "", heartCount: data.HomeData[3][idx].heartCount ?? "", like: true)
             delegate?.pressedHeartBtn(for: idx, like: true)
         } else {
             isTouched = false
@@ -32,7 +35,6 @@ class ProductCell: UICollectionViewCell {
         }
         sender.isSelected = !sender.isSelected
     }
-    
     
     var isTouched: Bool? {
         didSet {

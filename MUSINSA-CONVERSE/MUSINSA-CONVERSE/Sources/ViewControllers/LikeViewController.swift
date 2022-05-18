@@ -1,8 +1,10 @@
 
 import UIKit
 
-class LikeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+var likeList = LikeList()
 
+class LikeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HeartDelegate  {
+    
     var data = Data.shared
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -14,27 +16,37 @@ class LikeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
-      
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+        print(likeList.Count)
+    }
+    
+    func pressedHeartBtn(for index: Int, like: Bool) {
+        if like == false {
+            
+        } else {
+            
+        }
+        collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.HomeData[4].count
+        return likeList.Count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        let img = UIImage(named: data.HomeData[4][indexPath.item].imageName)
-        let title = data.HomeData[4][indexPath.item].title
-        let price = data.HomeData[4][indexPath.item].price
-        let star = data.HomeData[4][indexPath.item].starCount
-        let heart = data.HomeData[4][indexPath.item].heartCount
-        cell.image.contentMode = .scaleAspectFill
-        cell.image.image = img
-        cell.title.text = title
-        cell.price.text = price
-        cell.starTitle.text = star
-        cell.heartTitle.text = heart
+        cell.delegate = self
         cell.index = indexPath.item
+        let cellData = likeList.itemAt(index: indexPath.row)
+        cell.title.text = cellData.title
+        cell.image.image = UIImage(named: cellData.imageName ?? "")
+        cell.price.text = cellData.price
+        cell.heartTitle.text = cellData.heartCount
+        cell.starStackView.isHidden = true
+        cell.heartBtn.isHidden = true
         return cell
     }
     

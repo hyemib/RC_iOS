@@ -155,6 +155,7 @@
                 <outlet property="heartTitle" destination="bpT-Jq-BpI" id="0fH-Ng-Kme"/>
                 <outlet property="image" destination="Ea8-D5-HcW" id="lYY-8w-JfS"/>
                 <outlet property="price" destination="S3F-SI-nFy" id="QMg-tI-Bia"/>
+                <outlet property="starStackView" destination="YWi-8M-YWq" id="RK6-gr-e5D"/>
                 <outlet property="starTitle" destination="3cX-4G-fMy" id="tLp-BK-9QW"/>
                 <outlet property="title" destination="W6e-Jo-ye4" id="Esw-9i-TWu"/>
             </connections>
