@@ -11,16 +11,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var totalScore: UILabel!
     
     var timer: Timer?
-    var positionX: CGFloat!
     var ryanY: CGFloat! = 700
     var ryanPosition: CGFloat! = 215
     var tubes = [UIImageView:Int]()
     var snows = [UIImageView]()
-    var snows2 = [UIImageView]()
     var heartCount = 3
     var score = 0
     var scores = [Int]()
-    var index = 0
     
     
     override func viewDidLoad() {
@@ -186,7 +183,6 @@ class MainViewController: UIViewController {
                 let snow = UIImageView(image: UIImage(named: "snow"))
                 snow.contentMode = .scaleAspectFit
                 snow.frame = CGRect(x: tubePositionX, y: rangeY+50, width: 40, height: 40)
-                self.snows2.append(snow)
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 1.5, animations: {
                         snow.frame = CGRect(x: tubePositionX, y: self.view.frame.height, width: 40, height: 40)
@@ -197,7 +193,6 @@ class MainViewController: UIViewController {
                                 self.ryan.image = UIImage(named: "ryan1-1")
                             }
                             self.changeHeart()
-                            
                         }
                     }
                     self.view.addSubview(snow)

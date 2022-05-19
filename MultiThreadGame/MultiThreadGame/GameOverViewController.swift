@@ -36,6 +36,11 @@ class GameOverViewController: UIViewController {
         self.present(mainVC, animated: false, completion: nil)
     }
     
+    @IBAction func XButtonClicked(_ sender: Any) {
+        guard let introVC = self.storyboard?.instantiateViewController(withIdentifier: "IntroViewController") as? IntroViewController else { return }
+        introVC.modalPresentationStyle = .overCurrentContext
+        self.present(introVC, animated: false, completion: nil)
+    }
     
 }
 
@@ -46,7 +51,6 @@ extension GameOverViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath) as! ScoreCell
-       
         cell.scoreLabel.text = String(scores[indexPath.row])
         return cell
     }

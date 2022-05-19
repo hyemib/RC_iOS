@@ -217,14 +217,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScoreCell" id="nq7-sf-fwF" customClass="ScoreCell" customModule="MultiThreadGame" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="260" height="42"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="260" height="42.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nq7-sf-fwF" id="1NC-yd-JtB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="42"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="260" height="42.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTj-QI-UQG">
-                                                            <rect key="frame" x="28" y="10" width="46" height="22"/>
+                                                            <rect key="frame" x="28" y="10" width="46" height="22.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -286,14 +286,28 @@
                                     <constraint firstAttribute="bottom" secondItem="JfO-rx-CtA" secondAttribute="bottom" id="kXS-h8-7uz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zk-Me-PEC">
+                                <rect key="frame" x="313" y="236" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iPJ-57-73E"/>
+                                    <constraint firstAttribute="height" constant="50" id="kZ7-Ch-YKX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xImg"/>
+                                <connections>
+                                    <action selector="XButtonClicked:" destination="TeP-WM-qme" eventType="touchUpInside" id="ckS-fR-xNa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rW7-jY-ruz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iYx-lH-J97" firstAttribute="top" secondItem="rW7-jY-ruz" secondAttribute="top" constant="196" id="6nE-kq-Oyr"/>
+                            <constraint firstAttribute="trailing" secondItem="4Zk-Me-PEC" secondAttribute="trailing" constant="51" id="QNE-8r-zeK"/>
                             <constraint firstItem="Bky-H4-sUr" firstAttribute="width" secondItem="iYx-lH-J97" secondAttribute="width" multiplier="0.8" id="aen-WT-mUn"/>
                             <constraint firstItem="iYx-lH-J97" firstAttribute="centerX" secondItem="bqr-ht-gEP" secondAttribute="centerX" id="h6g-hh-Whb"/>
                             <constraint firstItem="Bky-H4-sUr" firstAttribute="top" secondItem="iYx-lH-J97" secondAttribute="bottom" constant="10" id="hAC-5x-reb"/>
+                            <constraint firstItem="4Zk-Me-PEC" firstAttribute="top" secondItem="rW7-jY-ruz" secondAttribute="top" constant="192" id="mDA-as-Xi8"/>
                             <constraint firstItem="Bky-H4-sUr" firstAttribute="centerX" secondItem="bqr-ht-gEP" secondAttribute="centerX" id="zMt-tv-UwN"/>
                         </constraints>
                     </view>
@@ -318,6 +332,7 @@
         <image name="manual2" width="1440" height="1055"/>
         <image name="restart2" width="280" height="85"/>
         <image name="ryan1-1" width="282" height="380"/>
+        <image name="xImg" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

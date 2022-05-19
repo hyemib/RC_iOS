@@ -11,7 +11,6 @@ class IntroViewController: UIViewController {
     }
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
-        //guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "GameOverViewController") as? GameOverViewController else { return }
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController else { return }
         mainVC.modalPresentationStyle = .overCurrentContext
         self.present(mainVC, animated: false, completion: nil)
