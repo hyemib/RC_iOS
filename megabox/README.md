@@ -2,8 +2,6 @@
 
 > 진행기간: 2022.04.09 ~ 2022.04.15
 
-</br>
-
 ## 🎯주제
 
 - AutoLayout을 적용하여 UI 구성
@@ -14,7 +12,7 @@
 
 - 메가박스 UI
 
-<img width = 300 src = "https://user-images.githubusercontent.com/98953443/163673440-edaf5b16-d1a9-4982-a5e6-b0f0abc521d3.gif"/>
+<img src="https://user-images.githubusercontent.com/98953443/169234505-5308d2c7-d7fb-411b-a21a-6a385d83db1b.gif">
 
 </br>
 
