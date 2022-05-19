@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var movieFeedImage2: UIImageView!
     @IBOutlet weak var movieFeedView2: UIView!
 
+    @IBOutlet weak var movieFeedView: UIView!
     @IBOutlet weak var movieFeedImage3: UIImageView!
     
     override func viewDidLoad() {
@@ -62,7 +63,7 @@ class HomeViewController: UIViewController {
         age3.layer.cornerRadius = 10
         
         movieFeedImage.layer.cornerRadius = 10
-        movieFeedImage2.layer.cornerRadius = 10
-        movieFeedImage3.layer.cornerRadius = 10
+        movieFeedView1.layer.cornerRadius = 10
+        movieFeedView2.layer.cornerRadius = 10
     }
 }
