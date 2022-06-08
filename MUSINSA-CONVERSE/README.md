@@ -11,7 +11,7 @@
 
 ## 📌 실행화면
 
-<img src="https://user-images.githubusercontent.com/98953443/172576404-afe631b9-6203-4285-8b8d-478f94855c8a.gif" width = 300>
+<img src="https://user-images.githubusercontent.com/98953443/172590813-a824ce3b-453b-444d-b47e-645e7f685e99.gif" width = 300>
 
 </br>
 
